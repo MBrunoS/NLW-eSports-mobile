@@ -6,12 +6,13 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
+    paddingHorizontal: 32,
+    paddingBottom: 16,
   },
   header: {
     width: "100%",
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 32,
     marginTop: 28,
     justifyContent: "space-between",
   },
@@ -33,8 +34,7 @@ export const styles = StyleSheet.create({
     width: "100%",
   },
   contentList: {
-    paddingLeft: 32,
-    paddingRight: 64,
+    paddingRight: 32,
     alignItems: "flex-start",
   },
   emptyListText: {

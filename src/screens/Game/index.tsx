@@ -13,6 +13,9 @@ import { THEME } from "../../theme";
 import { Heading } from "../../components/Heading";
 import { DuoCard, DuoCardProps } from "../../components/DuoCard";
 import { DuoMatch } from "../../components/DuoMatch";
+import { Button } from "../../components/Button";
+import { Plus } from "phosphor-react-native";
+import { CreateAd } from "../../components/CreateAd";
 
 export function Game() {
   const navigation = useNavigation();
@@ -21,6 +24,7 @@ export function Game() {
 
   const [duos, setDuos] = useState<DuoCardProps[]>([]);
   const [discordDuoSelected, setDiscordDuoSelected] = useState("");
+  const [isCreateAdOpen, setIsCreateAdOpen] = useState(false);
 
   function handleGoBack() {
     navigation.goBack();
@@ -87,10 +91,19 @@ export function Game() {
           )}
         />
 
+        <Button onPress={() => setIsCreateAdOpen(true)} icon={<Plus />}>
+          Criar novo anúncio
+        </Button>
+
         <DuoMatch
           visible={discordDuoSelected !== ""}
           onClose={() => setDiscordDuoSelected("")}
           discord={discordDuoSelected}
+        />
+
+        <CreateAd
+          visible={isCreateAdOpen}
+          onClose={() => setIsCreateAdOpen(false)}
         />
       </SafeAreaView>
     </Background>

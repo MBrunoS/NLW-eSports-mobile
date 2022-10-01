@@ -1,9 +1,10 @@
-import { Text, TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import { GameController } from "phosphor-react-native";
 import { THEME } from "../../theme";
 import { DuoInfo } from "../DuoInfo";
 
 import { styles } from "./styles";
+import { Button } from "../Button";
 
 export interface DuoCardProps {
   hourEnd: string;
@@ -37,10 +38,9 @@ export function DuoCard({ data, onConnect }: Props) {
         }
       />
 
-      <TouchableOpacity style={styles.button} onPress={onConnect}>
-        <GameController color={THEME.COLORS.TEXT} size={20} />
-        <Text style={styles.buttonTitle}>Conectar</Text>
-      </TouchableOpacity>
+      <Button onPress={onConnect} icon={<GameController />}>
+        Conectar
+      </Button>
     </View>
   );
 }
