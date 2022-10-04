@@ -3,12 +3,16 @@ import { THEME } from "../../../theme";
 
 export const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 12,
+    marginVertical: 12,
+    marginHorizontal: 24,
   },
   label: {
     color: THEME.COLORS.TEXT,
+    marginBottom: 8,
   },
   input: {
+    color: THEME.COLORS.TEXT,
     backgroundColor: THEME.COLORS.BACKGROUND_800,
+    paddingHorizontal: 12,
   },
 });

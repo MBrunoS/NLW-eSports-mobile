@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     width: 311,
     backgroundColor: THEME.COLORS.SHAPE,
     borderRadius: 8,
-    alignItems: "center",
+    // alignItems: "center",
     justifyContent: "center",
   },
   closeIcon: {

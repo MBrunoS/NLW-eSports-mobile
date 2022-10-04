@@ -12,12 +12,14 @@ import { styles } from "./styles";
 import { THEME } from "../../theme";
 import { Heading } from "../Heading";
 import { TextField } from "../Forms/TextField";
+import { GameParams } from "../../@types/navigation";
 
 interface Props extends ModalProps {
+  game: GameParams;
   onClose: () => void;
 }
 
-export function CreateAd({ onClose, ...rest }: Props) {
+export function CreateAd({ game, onClose, ...rest }: Props) {
   return (
     <Modal animationType="fade" transparent statusBarTranslucent {...rest}>
       <View style={styles.container}>
@@ -32,12 +34,19 @@ export function CreateAd({ onClose, ...rest }: Props) {
 
           <Heading
             title="Publique um anúncio"
-            style={{ alignItems: "center", marginTop: 24 }}
+            subtitle={game.title}
+            style={{ alignItems: "center", marginBottom: 24 }}
           />
 
           <TextField
             label="Seu nome (ou nickname)"
             placeholder="Como te chamam dentro do game"
+          />
+
+          <TextField
+            label="Joga há quantos anos?"
+            placeholder="Tudo bem ser ZERO"
+            keyboardType="numeric"
           />
         </View>
       </View>

@@ -104,6 +104,7 @@ export function Game() {
         <CreateAd
           visible={isCreateAdOpen}
           onClose={() => setIsCreateAdOpen(false)}
+          game={game}
         />
       </SafeAreaView>
     </Background>
